@@ -22,15 +22,15 @@ public class Test01 extends BaseDriver {
 
         MyFunction.wait(1);
         WebElement firstName = driver.findElement(By.id("FirstName"));
-        firstName.sendKeys("İsim");
+        firstName.sendKeys("First Name");
 
         MyFunction.wait(1);
         WebElement lastName = driver.findElement(By.name("LastName"));
-        lastName.sendKeys("Soyisim");
+        lastName.sendKeys("Last Name");
 
         MyFunction.wait(1);
         WebElement eMail = driver.findElement(By.id("Email"));
-        eMail.sendKeys("abccba@testing.com");
+        eMail.sendKeys("testing" + ((int) (Math.random() * 10000)) + "@testing.com");
 
         MyFunction.wait(1);
         WebElement companyName = driver.findElement(By.name("Company"));

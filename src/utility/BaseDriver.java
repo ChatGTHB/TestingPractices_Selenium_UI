@@ -14,7 +14,7 @@ public class BaseDriver {
     static {
 
         Logger logger = Logger.getLogger("");  // Çıktı günlüklerini alır
-        logger.setLevel(Level.SEVERE);              // Sadece HATA'ları gösterir
+        logger.setLevel(Level.SEVERE);               // Sadece HATA'ları gösterir
 
         driver = new ChromeDriver();         // ChromeDriver'ı başlatır
         driver.manage().window().maximize(); // Ekranı tam boyutlu yapar.
