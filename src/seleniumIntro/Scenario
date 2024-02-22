@@ -2,7 +2,7 @@ Scenario:
 
 http://demo.nopcommerce.com/ sitesine gidiniz
 
-Register’a tiklatiniz.
+Register’a tiklayiniz.
 
 Gender seciniz
 
@@ -18,12 +18,4 @@ Password giriniz
 
 Password Confirm giriniz
 
-Register butonuna tklayiniz
-
-Basarili bir sekilde kaydoldugunuzu dogrulayiniz
-Log in’ e tklayiniz
-
-Olusturdugunuz kayit bilgilerinden email ve passwordu giriniz
-Login butonuna tiklayiniz
-
-Basarili bir sekilde login oldugunuzu dogrulayiniz.
+Register butonuna tiklayiniz.
