@@ -47,5 +47,7 @@ public class Test01 extends BaseDriver {
         MyFunction.wait(1);
         WebElement registerButton=driver.findElement(By.name("register-button"));
         registerButton.click();
+
+        waitAndClose();
     }
 }
