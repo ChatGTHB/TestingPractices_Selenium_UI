@@ -13,35 +13,43 @@ public class BaseDriver {
 
     static {
 
-        Logger logger = Logger.getLogger(""); // Get output logs
-        logger.setLevel(Level.SEVERE);            // Show only ERRORs
+        Logger logger = Logger.getLogger("");  // Çıktı günlüklerini alır
+        logger.setLevel(Level.SEVERE);              // Sadece HATA'ları gösterir
 
-        driver = new ChromeDriver();
-        driver.manage().window().maximize(); // It maximizes the screen.
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        // 30 sec delay: time to load the page
-        // Sadece tüm sayfanın kodlarının bilgisyarınıza inmesi süresiyle ilgili
-        // bu eklenmezse Selenium sayfa yüklenene kadar (sonsuza) bekler.:
-        // 30 sn süresince sayfanın yüklenmesini bekle yüklenmezse hata ver
-        // eğer 2 sn yüklerse 30 sn. beklemez.
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        // 30 sec delay: time to find the elements
-        // Bütün weblementlerin element bazında,
-        // elemente özel işlem yapılmadan önce
-        // hazır hale gelmesi verilen mühlet yani süre.
-        // eğer 2 sn yüklerse 30 sn. beklemez.
+        driver = new ChromeDriver();         // ChromeDriver'ı başlatır
+        driver.manage().window().maximize(); // Ekranı tam boyutlu yapar.
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // Sayfa yükleme süresi sınırlaması: 30 saniye
+        /**
+         Sayfa yükleme süresi (pageLoadTimeout) WebDriver'ın bir sayfanın tamamen yüklenmesini beklemesini sağlar.
+         Bu süre boyunca WebDriver, sayfanın yüklenmesini bekler ve eğer belirtilen süre içinde sayfa tamamen yüklenmezse bir hata fırlatır.
+
+         Sayfa yükleme süresi, genellikle sayfanın tamamen yüklenmesini beklemek için kullanılır.
+         Örneğin, pageLoadTimeout(Duration.ofSeconds(30)) ifadesiyle 30 saniye olarak ayarlandığında,
+         WebDriver sayfanın tamamen yüklenmesini 30 saniye boyunca bekler.
+         Eğer sayfa belirtilen süre içinde yüklenmezse, bir TimeoutException hatası fırlatılır.
+
+         Bu süre, sayfanın tamamen yüklenmesi için yeterli bir süre olarak ayarlanmalıdır.
+         Sayfanın içeriği, resimleri, stil dosyalarını ve diğer kaynakları tamamen yüklemesi beklenir.
+         */
+
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));  // Zımni bekleme süresi sınırlaması: 30 saniye
+        /**
+         Zımni bekleme süresi (implicitlyWait) WebDriver'ın belirli bir süre boyunca arama işlemlerini beklemesini sağlar.
+         Bu süre boyunca WebDriver, sayfadaki elemanları bulmak için bekler.
+         Eğer eleman hemen bulunamazsa, WebDriver belirtilen süre boyunca arama işlemini tekrar eder.
+
+         Bu süre, WebDriver'ın elemanları bulmak için beklerken geçen süreyi temsil eder.
+         Örneğin, implicitlyWait(Duration.ofSeconds(30)) ifadesiyle 30 saniye olarak ayarlandığında,
+         WebDriver elemanları bulmak için 30 saniye boyunca bekler.
+
+         Zımni bekleme süresi, elemanların sayfa yüklendikten hemen sonra görünmediği durumlarda kullanışlı olabilir.
+         Bu süreyi, elemanların sayfada görünmesini beklemek için yeterli bir süre olarak ayarlayabilirsiniz.
+         */
     }
 
     public static void waitAndClose() {
-        MyFunction.wait(3);
-        driver.quit();
+        MyFunction.wait(3); // 3 saniye bekleme yapar
+        driver.quit();         // Sürücüyü kapatır
     }
-
-    //  Java fast - Website slow
-    //  It tries to find the java element, but the website is still loading, it says I couldn't find java before the site is loaded, and it ends,
-    //  When trying to find web element (FindElement/s) -->
-    //  Solution 1: we will give some time (20s)
-
-    //  Thread.sleep(); -> It stops Java directly for the given time. The more seconds you give, the more it stops the program. That's why it doesn't work for us.
-    //  For example, we gave him 20 seconds to exit when he finds us, we want him to find java at 10 seconds and exit, not to wait 20 seconds.
 }
