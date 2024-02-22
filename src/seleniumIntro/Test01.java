@@ -30,7 +30,7 @@ public class Test01 extends BaseDriver {
 
         MyFunction.wait(1);
         WebElement eMail = driver.findElement(By.id("Email"));
-        eMail.sendKeys("abc100000@testing.com");
+        eMail.sendKeys("abc1000000@testing.com");
 
         MyFunction.wait(1);
         WebElement companyName = driver.findElement(By.name("Company"));
