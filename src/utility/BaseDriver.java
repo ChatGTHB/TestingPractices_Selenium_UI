@@ -54,27 +54,26 @@ public class BaseDriver {
     }
 }
 
-    /**
-     *
-    Özet:
+         /**
+         Özet:
 
-    Bu kod, BaseDriver adında bir sınıf tanımlar.
-    Sınıfın içinde driver adında bir static WebDriver değişkeni bulunur.
-    Ayrıca, static bir blok içinde bazı işlemler gerçekleştirilir:
+         Bu kod, BaseDriver adında bir sınıf tanımlar.
+         Sınıfın içinde driver adında bir static WebDriver değişkeni bulunur.
+         Ayrıca, static bir blok içinde bazı işlemler gerçekleştirilir:
 
-    Logger nesnesi oluşturularak loglar alınır ve
-    sadece HATA (ERROR) seviyesindeki loglar görüntülenir.
+         Logger nesnesi oluşturularak loglar alınır ve
+         sadece HATA (ERROR) seviyesindeki loglar görüntülenir.
 
-     ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
+         ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
 
-    driver üzerinden manage() metoduyla tarayıcı yönetimi yapılır.
+         driver üzerinden manage() metoduyla tarayıcı yönetimi yapılır.
 
-    window().maximize() metodu kullanılarak tarayıcı penceresi tam boyutlu hale getirilir.
+         window().maximize() metodu kullanılarak tarayıcı penceresi tam boyutlu hale getirilir.
 
-    driver üzerinden manage().timeouts() metodu kullanılarak
-    sayfa yükleme süresi ve zımni bekleme süresi ayarlanır.
+         driver üzerinden manage().timeouts() metodu kullanılarak
+         sayfa yükleme süresi ve zımni bekleme süresi ayarlanır.
 
-    Ayrıca, waitAndClose adında bir metot tanımlanır.
-    Bu metot, MyFunction sınıfındaki wait metodu çağrılarak 3 saniye bekler ve
-    ardından driver.quit() metodu kullanılarak WebDriver kapatılır.
- */
+         Ayrıca, waitAndClose adında bir metot tanımlanır.
+         Bu metot, MyFunction sınıfındaki wait metodu çağrılarak 3 saniye bekler ve
+         ardından driver.quit() metodu kullanılarak WebDriver kapatılır.
+         */

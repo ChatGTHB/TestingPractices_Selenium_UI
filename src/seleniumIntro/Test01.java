@@ -13,7 +13,7 @@ public class Test01 extends BaseDriver {
 
         driver.get("http://demo.nopcommerce.com/");
 
-        WebElement registerLink = driver.findElement(By.className("ico-register"));
+        WebElement registerLink = driver.findElement(By.linkText("Register"));
         registerLink.click();
 
         MyFunction.wait(1);
@@ -30,7 +30,7 @@ public class Test01 extends BaseDriver {
 
         MyFunction.wait(1);
         WebElement eMail = driver.findElement(By.id("Email"));
-        eMail.sendKeys("abc1000000@testing.com");
+        eMail.sendKeys("abccba@testing.com");
 
         MyFunction.wait(1);
         WebElement companyName = driver.findElement(By.name("Company"));
@@ -45,7 +45,7 @@ public class Test01 extends BaseDriver {
         passwordConfirm.sendKeys("password");
 
         MyFunction.wait(1);
-        WebElement registerButton = driver.findElement(By.name("register-button"));
+        WebElement registerButton = driver.findElement(By.className("register-next-step-button"));
         registerButton.click();
 
         waitAndClose();
