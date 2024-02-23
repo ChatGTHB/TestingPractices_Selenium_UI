@@ -1,4 +1,4 @@
-package seleniumIntro;
+package _01_seleniumIntro;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
