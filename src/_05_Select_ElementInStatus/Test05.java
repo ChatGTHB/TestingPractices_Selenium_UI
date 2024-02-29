@@ -1,4 +1,4 @@
-package _05_Select;
+package _05_Select_ElementInStatus;
 
 import org.junit.Assert;
 import org.junit.Test;
