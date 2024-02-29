@@ -39,12 +39,18 @@ public class Test04 extends BaseDriver {
         searchButton.click();
 
         WebElement product=driver.findElement(By.xpath("//a[text()='Beats Pill 2.0 Wireless Speaker']"));
+        Assert.assertTrue(product.getText().contains("Beats Pill"));
+        product.click();
 
-        /*
-        ➢ Sayfada gözüken urunun Baslığının “Beats Pill” yazısını içerdiğini doğrulayınız.
-        ➢ Ürüne tıklayınız.
-        ➢ ADD TO CART Butonuna tıklayınız.
-        ➢ Urunun başarılı bir şekilde Sepete eklendiğini doğrulayınız.
-         */
+        WebElement addToCard = driver.findElement(By.xpath("//button[contains(@id,'add-to-cart')]"));
+        addToCard.click();
+
+        WebElement shoppingCard = driver.findElement(By.xpath("//*[text()='shopping cart']"));
+        shoppingCard.click();
+
+        WebElement confirmCard = driver.findElement(By.xpath("(//*[text()='Beats Pill 2.0 Wireless Speaker'])[2]"));
+        Assert.assertTrue(confirmCard.isEnabled());
+
+        waitAndClose();
     }
 }
