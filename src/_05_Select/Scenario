@@ -12,7 +12,7 @@ First name giriniz
 
 Last name giriniz
 
-Doğum tarihini select metodu kullanarak doldurunuz. (3 Nisan 1920)
+Doğum tarihini Selenium select metodu kullanarak doldurunuz. (3 Nisan 1920)
 
 Email giriniz
 
@@ -20,8 +20,8 @@ Company Name giriniz
 
 Password giriniz
 
-Password Confirm giriniz
+Passwordu tekrar giriniz
 
 Register butonuna tiklayiniz
 
-İşlemin gerçekleştiğine dair mesajın görüldüğünü doğrulayınız
+İşlemin gerçekleştiğine dair mesajın görüldüğünü doğrulayınız.
