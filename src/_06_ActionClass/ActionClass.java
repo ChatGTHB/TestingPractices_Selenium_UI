@@ -43,17 +43,11 @@ public class ActionClass extends BaseDriver {
         MyFunction.wait(3);
 
         WebElement rightClick = driver.findElement(By.id("hot-spot"));
-        aksiyonDriver.contextClick(rightClick).perform();
+        aksiyonDriver.contextClick(rightClick).build().perform();
         MyFunction.wait(3);
 
-        aksiyonDriver.sendKeys(Keys.ENTER).build();
-        MyFunction.wait(1);
+        driver.switchTo().alert().accept();
 
-        aksiyonDriver.click(rightClick).build();
-        aksiyonDriver.perform();
-
-        //aksiyonDriver.perform();
-        MyFunction.wait(3);
         waitAndClose();
     }
 }
