@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 public class BaseDriver {
 
     public static WebDriver driver;
-
     public static WebDriverWait wait;
 
     static {
@@ -49,9 +48,10 @@ public class BaseDriver {
          Zımni bekleme süresi, elemanların sayfa yüklendikten hemen sonra görünmediği durumlarda kullanışlı olabilir.
          Bu süreyi, elemanların sayfada görünmesini beklemek için yeterli bir süre olarak ayarlayabilirsiniz.
          */
-
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
+
+
 
     public static void waitAndClose() {
         MyFunction.wait(3); // 3 saniye bekleme yapar
@@ -59,26 +59,26 @@ public class BaseDriver {
     }
 }
 
-         /**
-         Özet:
-
-         Bu kod, BaseDriver adında bir sınıf tanımlar.
-         Sınıfın içinde driver adında bir static WebDriver değişkeni bulunur.
-         Ayrıca, static bir blok içinde bazı işlemler gerçekleştirilir:
-
-         Logger nesnesi oluşturularak loglar alınır ve
-         sadece HATA (ERROR) seviyesindeki loglar görüntülenir.
-
-         ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
-
-         driver üzerinden manage() metoduyla tarayıcı yönetimi yapılır.
-
-         window().maximize() metodu kullanılarak tarayıcı penceresi tam boyutlu hale getirilir.
-
-         driver üzerinden manage().timeouts() metodu kullanılarak
-         sayfa yükleme süresi ve zımni bekleme süresi ayarlanır.
-
-         Ayrıca, waitAndClose adında bir metot tanımlanır.
-         Bu metot, MyFunction sınıfındaki wait metodu çağrılarak 3 saniye bekler ve
-         ardından driver.quit() metodu kullanılarak WebDriver kapatılır.
-         */
+/**
+ * Özet:
+ * <p>
+ * Bu kod, BaseDriver adında bir sınıf tanımlar.
+ * Sınıfın içinde driver adında bir static WebDriver değişkeni bulunur.
+ * Ayrıca, static bir blok içinde bazı işlemler gerçekleştirilir:
+ * <p>
+ * Logger nesnesi oluşturularak loglar alınır ve
+ * sadece HATA (ERROR) seviyesindeki loglar görüntülenir.
+ * <p>
+ * ChromeDriver nesnesi oluşturulur ve driver değişkenine atanır.
+ * <p>
+ * driver üzerinden manage() metoduyla tarayıcı yönetimi yapılır.
+ * <p>
+ * window().maximize() metodu kullanılarak tarayıcı penceresi tam boyutlu hale getirilir.
+ * <p>
+ * driver üzerinden manage().timeouts() metodu kullanılarak
+ * sayfa yükleme süresi ve zımni bekleme süresi ayarlanır.
+ * <p>
+ * Ayrıca, waitAndClose adında bir metot tanımlanır.
+ * Bu metot, MyFunction sınıfındaki wait metodu çağrılarak 3 saniye bekler ve
+ * ardından driver.quit() metodu kullanılarak WebDriver kapatılır.
+ */
