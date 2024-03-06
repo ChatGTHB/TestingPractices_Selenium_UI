@@ -1,4 +1,4 @@
-package _07_Action_Class_Alert;
+package _07_ActionClass_Alert;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
