@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import src.utility.BaseDriver;
+import utility.BaseDriver;
 
 import java.util.List;
 
@@ -44,26 +44,22 @@ public class Wait extends BaseDriver {
 
         driver.get("https://google.com/");
 
-        List<WebElement> rejectAll=driver.findElements(By.xpath("//button[@id='W0wltc']/div"));
-        if(!rejectAll.isEmpty()){
+        List<WebElement> rejectAll = driver.findElements(By.xpath("//button[@id='W0wltc']/div"));
+        if (!rejectAll.isEmpty()) {
             rejectAll.get(0).click();
         }
 
-        WebElement searchInput= driver.findElement(By.xpath("//textarea[@id='APjFqb']"));
+        WebElement searchInput = driver.findElement(By.xpath("//textarea[@id='APjFqb']"));
 
-        Actions actions=new Actions(driver);
-        Action action=actions
-                .moveToElement(searchInput)
-                .click()
-                .sendKeys("selenium"+ Keys.ENTER)
-                .build();
+        Actions actions = new Actions(driver);
+        Action action = actions.moveToElement(searchInput).click().sendKeys("selenium" + Keys.ENTER).build();
         action.perform();
 
-        WebElement theFirstLink= driver.findElement(By.xpath("//h3[@class='LC20lb MBeuO DKV0Md']"));
+        WebElement theFirstLink = driver.findElement(By.xpath("//h3[@class='LC20lb MBeuO DKV0Md']"));
         wait.until(ExpectedConditions.elementToBeClickable(theFirstLink));
 
         // The first method
-        Assert.assertEquals("Selenium",theFirstLink.getText());
+        Assert.assertEquals("Selenium", theFirstLink.getText());
 
         // The second method
         Assert.assertTrue(theFirstLink.getText().toLowerCase().contains("selenium"));
