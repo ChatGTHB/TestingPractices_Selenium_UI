@@ -4,8 +4,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import src.utility.BaseDriver;
-import src.utility.MyFunction;
+import utility.BaseDriver;
+import utility.MyFunction;
 
 import java.util.ArrayList;
 
