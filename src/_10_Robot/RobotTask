@@ -1,0 +1,8 @@
+Robot Class Task:
+
+1)- Bilgisayarınızın masaüstünde içi herhangi bir şekilde dolu olan word ya da text belgesi oluşturunuz.
+2)- https://dosya.org/ isimli websitesine gidiniz.
+3)- Masaüstünüzde oluşturmuş olduğunuz word ya da text belgesini Robot Class kullanarak upload ediniz.
+4)- Belgenin upload edildiğini doğrulayınız.
+5)- Upload edilen belgenizin download URL’sini Robot Class kullanarak yeni bir sekmede açınız.
+6)- Açılan sekmenin belgenize ait olduğunu belge adı ile doğrulayınız.

@@ -8,4 +8,12 @@
 ## Element In Status
 ## Action Class
 ## Alert
+## Wait
+## Iframes
+## Scroll
+## Windows
+## Robot Class
+## Record Screen
+## Windows Size
+
  
