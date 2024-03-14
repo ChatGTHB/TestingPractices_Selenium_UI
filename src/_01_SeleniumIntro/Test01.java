@@ -10,7 +10,7 @@ import utility.MyFunction;
 public class Test01 extends BaseDriver {
 
     @Test
-    public void scenario1() {
+    public void registerTest() {
 
         driver.get("http://demo.nopcommerce.com/");
 
