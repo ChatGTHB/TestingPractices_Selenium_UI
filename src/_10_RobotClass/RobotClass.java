@@ -1,4 +1,4 @@
-package _10_Robot;
+package _10_RobotClass;
 
 import org.junit.Assert;
 import org.junit.Test;
