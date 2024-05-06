@@ -1,6 +1,7 @@
 package _12_Exercises._02_Selenium_CssSelector_22_02_2023;
 
 import org.junit.Assert;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
