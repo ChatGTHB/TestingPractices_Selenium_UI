@@ -85,7 +85,12 @@ These examples provide a practical approach to mastering Selenium for robust UI 
 - [ChatGTHB](https://github.com/ChatGTHB)
 
 ## 🤝 Contributing
-Contributions to improve or extend the test cases are highly appreciated. Please fork the repository and submit pull requests with your enhancements.
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a Pull Request.
 
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
