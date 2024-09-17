@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import utility.BaseDriver;
 import utility.MyFunction;
 
@@ -13,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class LocatorStrategiesExample extends BaseDriver {
 
     @Test
-    public void testRegisterAndLogin() {
+    public void testRegister() {
         // Siteye gidiyoruz
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
 

@@ -10,8 +10,6 @@ import java.util.logging.Logger;
 
 public class BaseDriver {
 
-
-
     public static WebDriver driver;
     public static WebDriverWait wait;
 
