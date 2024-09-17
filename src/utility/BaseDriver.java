@@ -14,7 +14,6 @@ public class BaseDriver {
     public static WebDriverWait wait;
 
     static {
-
         Logger logger = Logger.getLogger("");  // Çıktı günlüklerini alır
         logger.setLevel(Level.SEVERE);               // Sadece HATA'ları gösterir
 
