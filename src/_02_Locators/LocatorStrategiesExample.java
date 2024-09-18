@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import utility.BaseDriver;
 import utility.MyFunction;
 
-import static org.junit.Assert.assertTrue;
 
 public class LocatorStrategiesExample extends BaseDriver {
 
