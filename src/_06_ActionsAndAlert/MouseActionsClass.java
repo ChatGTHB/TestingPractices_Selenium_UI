@@ -28,8 +28,6 @@ public class MouseActionsClass extends BaseDriver {
 //      Alternatif: fareyi elementin belli bir noktası üzerine getirme
 //      actions.moveToElement(elementToHover, 50, 50).perform();
 
-
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -59,7 +57,6 @@ public class MouseActionsClass extends BaseDriver {
         String expectedMessage = "You have done a double click";
         Assert.assertEquals(message.getText(), expectedMessage);
 
-        MyFunction.wait(2);  // İşlemi gözlemlemek için bekleme süresi
         waitAndClose();
     }
 
@@ -81,7 +78,6 @@ public class MouseActionsClass extends BaseDriver {
         System.out.println("Alert içeriği: " + alert.getText());
         alert.accept(); // Alert penceresini kapatma
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -99,7 +95,6 @@ public class MouseActionsClass extends BaseDriver {
 //        Alternatif: actions.moveToElement() ile tıklama işlemi
 //        actions.moveToElement(elementToClick).click().perform();
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -121,7 +116,6 @@ public class MouseActionsClass extends BaseDriver {
 //        Alternatif: Belirli piksel mesafesine sürükleyip bırakma (dragAndDropBy)
 //        actions.clickAndHold(elementToClickAndHold).moveByOffset(150, 0).release().perform();
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -138,7 +132,6 @@ public class MouseActionsClass extends BaseDriver {
 
         actions.dragAndDrop(sourceElement, targetElement).perform();  // Kaynak elemanı hedefe sürükle
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 }

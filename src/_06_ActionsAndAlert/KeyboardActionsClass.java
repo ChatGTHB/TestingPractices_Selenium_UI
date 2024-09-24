@@ -27,7 +27,6 @@ public class KeyboardActionsClass extends BaseDriver {
 //        Alternatif: actions.sendKeys() kullanarak
 //        actions.sendKeys(Keys.SPACE).perform();
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -45,7 +44,6 @@ public class KeyboardActionsClass extends BaseDriver {
 //        Alternatif: keyDown() ve keyUp() ile
 //        actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -63,7 +61,6 @@ public class KeyboardActionsClass extends BaseDriver {
 //        Alternatif: Doğrudan büyük T harfi yazma
 //        bodyElement.sendKeys("T");
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 
@@ -83,7 +80,6 @@ public class KeyboardActionsClass extends BaseDriver {
 //        Alternatif: Tek seferde chord ile
 //        bodyElement.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 
-        MyFunction.wait(2);
         waitAndClose();
     }
 }

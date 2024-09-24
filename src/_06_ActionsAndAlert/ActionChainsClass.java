@@ -63,7 +63,6 @@ public class ActionChainsClass extends BaseDriver {
         // 9. Adım: Çift tıklama sonrası açılan alert penceresini kapat
         driver.switchTo().alert().accept();  // Alert penceresini kapat
 
-        MyFunction.wait(2);  // İşlem gözlemlenebilsin diye bekleme
         waitAndClose();  // Test tamamlandıktan sonra tarayıcıyı kapat
     }
 
@@ -104,7 +103,6 @@ public class ActionChainsClass extends BaseDriver {
         String expectedDropMessage = "Dropped!";  // Beklenen geri bildirim mesajı
         assert dropMessage.equals(expectedDropMessage) : "Sürükleme işlemi başarısız!";
 
-        MyFunction.wait(2);  // İşlem gözlemlenebilsin diye bekleme
         waitAndClose();  // Test tamamlandıktan sonra tarayıcıyı kapat
     }
 }
