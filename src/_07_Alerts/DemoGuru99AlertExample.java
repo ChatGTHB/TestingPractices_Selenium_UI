@@ -1,14 +1,13 @@
 package _07_Alerts;
 
 import org.junit.Test;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utility.BaseDriver;
 import utility.MyFunction;
 
-public class Examples extends BaseDriver {
+public class DemoGuru99AlertExample extends BaseDriver {
 
     Actions actions = new Actions(driver);
 
@@ -65,27 +64,5 @@ public class Examples extends BaseDriver {
         driver.switchTo().alert().accept();  // Alert penceresini kapat
 
         waitAndClose();  // Test tamamlandıktan sonra tarayıcıyı kapat
-    }
-
-    /**
-     * Fare Aksiyonları: Sağ tıklama (Right Click) ve Alert ile etkileşim
-     */
-    @Test
-    public void rightClickTest() {
-        driver.get("http://the-internet.herokuapp.com/context_menu");
-
-        MyFunction.wait(2);
-        WebElement elementToRightClick = driver.findElement(By.id("hot-spot"));
-        actions.contextClick(elementToRightClick).perform();  // Sağ tıklama işlemi
-
-        MyFunction.wait(2);
-
-        // Açılan alert penceresini handle etme
-        Alert alert = driver.switchTo().alert();
-        System.out.println("Alert içeriği: " + alert.getText());
-        alert.accept(); // Alert penceresini kapatma
-
-        MyFunction.wait(2);
-        waitAndClose();
     }
 }
