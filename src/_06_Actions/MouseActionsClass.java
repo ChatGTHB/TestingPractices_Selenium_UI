@@ -1,4 +1,4 @@
-package _06_ActionsAndAlert;
+package _06_Actions;
 
 import org.junit.Assert;
 import org.junit.Test;

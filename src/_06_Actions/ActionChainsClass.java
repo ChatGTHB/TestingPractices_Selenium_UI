@@ -1,4 +1,4 @@
-package _06_ActionsAndAlert;
+package _06_Actions;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
