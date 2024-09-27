@@ -4,17 +4,15 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.BaseDriver;
 
-import java.time.Duration;
-
-public class DemoQAAlertWaitExample extends BaseDriver {
+public class AlertHandlingTest extends BaseDriver {
 
     /**
-     Task: Explicit Wait ile Zamanlı Alert Yakalama
-     Görev Adımları:
+     Task:
+     Explicit Wait ile Zamanlı Alert Yakalama
 
+     Görev Adımları:
      1. "https://demoqa.com/alerts" sitesine gidiniz.
      2. "Click me" yazan butona tıklayınız. Bu buton, 5 saniye sonra bir alert penceresi açacaktır.
      3. Bu alert penceresinin açılmasını bekleyiniz.
@@ -31,14 +29,13 @@ public class DemoQAAlertWaitExample extends BaseDriver {
         timerAlertButton.click();
 
         // 3. Adım: Explicit Wait ile alert penceresinin açılmasını bekle
-        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // Maksimum 10 saniye bekle
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // 10 saniyeye kadar bekle
         wait.until(ExpectedConditions.alertIsPresent());  // Alert'in görünmesini bekle
 
         // 4. Adım: Alert penceresini kabul et (OK butonuna bas)
         driver.switchTo().alert().accept();
 
-        // Testin başarılı olduğundan emin ol, tarayıcıyı kapat
+        // 5. Adım: Testin başarılı olduğundan emin ol, tarayıcıyı kapat
         waitAndClose();
     }
 }
-
