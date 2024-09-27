@@ -1,5 +1,6 @@
 package _08_Waits;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,28 +18,11 @@ public class FluentWaitExampleJUnit extends BaseDriver {
      Task: Fluent Wait ile Dinamik İçerik Bekleme
 
      Görev Adımları:
-
-     1. Web Sitesine Gidin:
-     - "https://the-internet.herokuapp.com/dynamic_loading/1" sitesine gidiniz.
-
-     2. "Start" Butonuna Tıklayın:
-     - Sayfadaki "Start" butonunu bulun ve tıklayın. Bu butona tıkladığınızda,
-       sayfa dinamik bir içerik yüklemeye başlayacaktır.
-
-     3. Fluent Wait ile "Hello World!" Yazısını Bekleyin:
-     - Sayfada tıklamanın ardından yüklenen "Hello World!" yazısının görünmesini
-     Fluent Wait kullanarak 15 saniye boyunca bekleyin.
-     - Bekleme süresi boyunca her 2 saniyede bir, yazının görünüp görünmediğini kontrol edin.
-
-     4. Bekleme Sonucu:
-     - Eğer "Hello World!" yazısı görünür hale geldiyse,
-       testi başarılı olarak işaretleyin ve ekrana başarı mesajı yazdırın:
-     "Test Başarılı: 'Hello World!' yazısı göründü."
-     - Eğer "Hello World!" yazısı görünmezse, testi başarısız olarak işaretleyin ve ekrana hata mesajı yazdırın:
-     "Test Başarısız: 'Hello World!' yazısı görünmedi."
-
-     5. Testi Sonlandırın:
-     - Tarayıcıyı kapatarak testi sonlandırın.
+     1. Web Sitesine Gidin: "https://the-internet.herokuapp.com/dynamic_loading/1" sitesine gidiniz.
+     2. "Start" Butonuna Tıklayın: Dinamik bir içerik yüklemeye başlayacaktır.
+     3. Fluent Wait ile "Hello World!" Yazısını Bekleyin: 15 saniye boyunca, her 2 saniyede bir yazının görünüp görünmediğini kontrol edin.
+     4. Bekleme Sonucu: Başarı veya başarısızlık sonucunu konsola yazdırın.
+     5. Testi Sonlandırın: Tarayıcıyı kapatın.
      */
 
     @Test
@@ -46,43 +30,39 @@ public class FluentWaitExampleJUnit extends BaseDriver {
         // 1. Adım: Web sitesine git
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 
-        // 2. Adım: "Start" butonuna tıkla
-        // Açıklama: XPath kullanarak "Start" butonunu buluyoruz ve butona tıklıyoruz.
-        // Bu butona tıkladıktan sonra sayfada dinamik olarak içerik (yani "Hello World!" yazısı) yüklenmeye başlar.
-        // Ancak bu içerik hemen görünmez, bir süre beklemek gerekir.
+        // 2. Adım: "Start" butonuna tıkla ve dinamik içeriğin yüklenmesini başlat
         WebElement startButton = driver.findElement(By.xpath("//button[text()='Start']"));
         startButton.click();
 
         /**
-            3. Adım: Fluent Wait tanımlama
-            Fluent Wait'i burada şu şekilde tanımlıyoruz:
+         3. Adım: Fluent Wait tanımlama
+         Fluent Wait'i burada şu şekilde tanımlıyoruz:
 
-            1)- withTimeout(Duration.ofSeconds(15)): Maksimum bekleme süresi olarak 15 saniye belirliyoruz.
-            Bu, Fluent Wait'in 15 saniye boyunca koşulu kontrol edeceği anlamına gelir.
+         1)- withTimeout(Duration.ofSeconds(15)): Maksimum bekleme süresi olarak 15 saniye belirliyoruz.
+         Bu, Fluent Wait'in 15 saniye boyunca koşulu kontrol edeceği anlamına gelir.
 
-            2)- pollingEvery(Duration.ofSeconds(2)): Bekleme süresi boyunca her 2 saniyede bir sayfadaki
-            "Hello World!" yazısının görünür olup olmadığını kontrol ediyoruz.
+         2)- pollingEvery(Duration.ofSeconds(2)): Bekleme süresi boyunca her 2 saniyede bir sayfadaki
+         "Hello World!" yazısının görünür olup olmadığını kontrol ediyoruz.
 
-            3)- ignoring(NoSuchElementException.class): Eğer bu süreçte element bulunamazsa
-            (örneğin, element henüz yüklenmemişse),
-            NoSuchElementException hatasını göz ardı ediyoruz ve tekrar denemeye devam ediyoruz.
-        */
-        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(15))      // Maksimum bekleme süresi
+         3)- ignoring(NoSuchElementException.class): Eğer bu süreçte element bulunamazsa
+         (örneğin, element henüz yüklenmemişse), NoSuchElementException hatasını göz ardı ediyoruz
+         ve tekrar denemeye devam ediyoruz.
+         */
+        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(15))      // Maksimum bekleme süresi
                 .pollingEvery(Duration.ofSeconds(2))      // Her 2 saniyede bir kontrol et
                 .ignoring(NoSuchElementException.class);  // Eğer element yoksa hata verme, devam et
 
         /**
-            4. Adım: "Hello World!" yazısının görünmesini bekleme
-            Bu adımda, Fluent Wait ile "Hello World!" yazısının görünür hale gelmesini bekliyoruz.
+         4. Adım: "Hello World!" yazısının görünmesini bekleme
+         Bu adımda, Fluent Wait ile "Hello World!" yazısının görünür hale gelmesini bekliyoruz.
 
-            1)- apply() metodu:
-                a) WebDriver, belirli periyotlarda (2 saniyede bir) sayfadaki "Hello World!" yazısını kontrol eder.
-                b) Eğer yazı görünür hale gelirse (isDisplayed()), element döndürülür.
-                c) Eğer yazı görünmezse, null döndürülür ve Fluent Wait tekrar denemeye devam eder.
+         1)- apply() metodu:
+         a) WebDriver, belirli periyotlarda (2 saniyede bir) sayfadaki "Hello World!" yazısını kontrol eder.
+         b) Eğer yazı görünür hale gelirse (isDisplayed()), element döndürülür.
+         c) Eğer yazı görünmezse, null döndürülür ve Fluent Wait tekrar denemeye devam eder.
 
-            2)- Fluent Wait bu işlemi 15 saniye boyunca yapar.
-                Eğer 15 saniye içinde yazı görünür hale gelmezse, test başarısız olur.
+         2)- Fluent Wait bu işlemi 15 saniye boyunca yapar.
+         Eğer 15 saniye içinde yazı görünür hale gelmezse, test başarısız olur.
          */
         WebElement helloWorldText = fluentWait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
@@ -95,23 +75,21 @@ public class FluentWaitExampleJUnit extends BaseDriver {
         });
 
         /**
-            5. Adım: Testin sonucunu kontrol et
-            Eğer helloWorldText null değilse (yani "Hello World!" yazısı bulunduysa ve görünürse),
-            test başarıyla sonuçlanır ve konsola "Test Başarılı: 'Hello World!' yazısı göründü." mesajı yazdırılır.
-            Aksi takdirde, test başarısız olur ve "Test Başarısız: 'Hello World!' yazısı görünmedi." mesajı gösterilir.
+         5. Adım: Testin sonucunu JUnit ile kontrol et
+         Eğer helloWorldText null değilse (yani "Hello World!" yazısı bulunduysa ve görünürse),
+         test başarıyla sonuçlanır. Null ise test JUnit tarafından başarısız kabul edilir.
          */
-        if (helloWorldText != null) {
-            System.out.println("Test Başarılı: 'Hello World!' yazısı göründü.");
-        } else {
-            System.out.println("Test Başarısız: 'Hello World!' yazısı görünmedi.");
-        }
+        Assert.assertNotNull("Test Başarısız: 'Hello World!' yazısı görünmedi.", helloWorldText);
+        Assert.assertTrue("'Hello World!' yazısı görünmedi!", helloWorldText.isDisplayed());
+
+        System.out.println("Test Başarılı: 'Hello World!' yazısı göründü.");
 
         // 6. Adım: Tarayıcıyı kapat
-        // Test tamamlandıktan sonra, tarayıcıyı kapatarak temiz bir sonlandırma yapıyoruz.
         waitAndClose();
 
         /**
          Neden Fluent Wait Kullandık?
+
          Dinamik İçerik: Bu sayfada, içerik (yani "Hello World!" yazısı) dinamik olarak yükleniyor.
          Yani, sayfa yüklendiğinde hemen görünür olmayabilir.
          Butona tıkladıktan sonra belirli bir süre beklemek gerekiyor.
