@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utility.BaseDriver;
 
@@ -15,10 +13,10 @@ import java.util.List;
 public class GoogleExplicitWaitExample extends BaseDriver {
 
     /**
-     Task: Google Arama Sonuçlarında Selenium Kelimesini Doğrulama
+     Task:
+     Google Arama Sonuçlarında Selenium Kelimesini Doğrulama
 
      Görev Adımları:
-
      1. Web Sitesine Gidin:
      - "https://google.com/" sitesine gidiniz.
 
@@ -44,30 +42,22 @@ public class GoogleExplicitWaitExample extends BaseDriver {
             rejectAll.get(0).click();
         }
 
-        // 3. Adım: Arama kutusunu bulun
-        WebElement searchInput = driver.findElement(By.xpath("//textarea[@id='APjFqb']"));
+        // 3. Adım: Arama kutusunu bulun ve "Selenium" yazın, ardından Enter'a basın
+        WebElement searchInput = driver.findElement(By.name("q"));
+        searchInput.sendKeys("selenium" + Keys.ENTER);
 
-        // 4. Adım: Selenium kelimesini arama kutusuna yazın ve Enter tuşuna basın
-        Actions actions = new Actions(driver);
-        Action action = actions
-                .moveToElement(searchInput)  // Arama kutusuna gel
-                .click()  // Tıkla
-                .sendKeys("selenium" + Keys.ENTER)  // Selenium yaz ve Enter'a bas
-                .build();
-        action.perform();  // Aksiyon zincirini gerçekleştir
-
-        // 5. Adım: İlk arama sonucunu bul ve tıklanabilir olmasını bekle
-        WebElement theFirstLink = driver.findElement(By.xpath("//h3[@class='LC20lb MBeuO DKV0Md']"));
+        // 4. Adım: İlk arama sonucunu bul ve tıklanabilir olmasını bekle
+        WebElement theFirstLink = driver.findElement(By.xpath("(//h3)[1]"));
         wait.until(ExpectedConditions.elementToBeClickable(theFirstLink));  // Explicit Wait kullanarak tıklanabilir olmasını bekle
 
-        // 6. Adım: İlk arama sonucunun "Selenium" kelimesini içerip içermediğini doğrula
-        // İlk yöntem: Sonucun başlığının tam olarak "Selenium" olduğunu kontrol et
-        Assert.assertEquals("Selenium", theFirstLink.getText());
+        // 5. Adım: İlk arama sonucunun "Selenium" kelimesini içerip içermediğini doğrula
+        String firstResultText = theFirstLink.getText().toLowerCase();
+        System.out.println("İlk Sonuç: " + firstResultText);
 
-        // İkinci yöntem: Başlığın içinde "selenium" kelimesinin olup olmadığını doğrula (küçük/büyük harf farkını dikkate almadan)
-        Assert.assertTrue(theFirstLink.getText().toLowerCase().contains("selenium"));
+        // Başlığın içinde "selenium" kelimesinin olup olmadığını doğrula (küçük/büyük harf farkını dikkate almadan)
+        Assert.assertTrue("Arama sonucu 'Selenium' içermiyor!", firstResultText.contains("selenium"));
 
-        // 7. Adım: Testi kapat
+        // 6. Adım: Testi kapat
         waitAndClose();
     }
 }
