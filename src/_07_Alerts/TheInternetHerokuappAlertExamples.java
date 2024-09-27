@@ -11,7 +11,6 @@ import utility.MyFunction;
 
 public class TheInternetHerokuappAlertExamples extends BaseDriver {
 
-
     @Test
     public void clickForJSAlertTest() {
         driver.get("https://the-internet.herokuapp.com/");
