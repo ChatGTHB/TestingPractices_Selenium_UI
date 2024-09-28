@@ -1,0 +1,18 @@
+
+Techno Study Mentoring Task
+Konu: Selenium ile Web Sitesinde Kayıt Olma İşlemi
+
+Task:
+
+1. "http://tutorialsninja.com/demo/" sitesine gidin.
+2. Sağ üstteki "My Account" menüsüne tıklayın ve "Register" bağlantısını seçin.
+3. İlk adınızı (First Name) ve soyadınızı (Last Name) girin.
+4. E-posta adresinizi (Email) girin.
+5. Telefon numaranızı (Telephone) girin.
+6. Şifrenizi (Password) ve şifre tekrarını (Password Confirm) girin.
+7. "Privacy Policy" kutucuğunu işaretleyin.
+8. "Continue" butonuna tıklayın.
+9. Kayıt işleminin tamamlandığını gözlemleyin ve tarayıcıyı kapatın.
+
+
+
