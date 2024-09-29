@@ -61,7 +61,7 @@ public class NinjaRegisterTest extends BaseDriver {
         WebElement continueButton = driver.findElement(By.cssSelector("input[value='Continue']"));
         continueButton.click();
 
-        // Tarayıcıyı belirli bir süre bekleyip kapat
+        // Belirli bir süre bekleyip tarayıcıyı kapatıyoruz
         waitAndClose();
     }
 }

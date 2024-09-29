@@ -89,7 +89,7 @@ public class LocatorStrategiesExample extends BaseDriver {
         // JUnit ile assertion yapıyoruz (Başarılı kaydolma mesajını kontrol ediyoruz)
         Assert.assertTrue("Kayıt başarılı değil! Beklenen mesaj bulunamadı.", actualMessage.contains("Welcome"));
 
-        // Tarayıcıyı belirli bir süre bekleyip kapatıyoruz
+        // Belirli bir süre bekleyip tarayıcıyı kapatıyoruz
         waitAndClose();
     }
 }
