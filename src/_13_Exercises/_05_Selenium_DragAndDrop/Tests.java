@@ -22,14 +22,10 @@ public class Tests extends BaseDriver {
 
     @Test
     public void Test1() {
-
         driver.get("http://dhtmlgoodies.com/scripts/drag-drop-quiz/drag-drop-quiz-d2.html");
 
         List<WebElement> cities = driver.findElements(By.xpath("//div[starts-with(@id,'a') and @class='dragDropSmallBox']"));
         List<WebElement> blanks = driver.findElements(By.xpath("//div[starts-with(@id,'q') and @class='dragDropSmallBox']"));
-
-        Duration duration=Duration.ofSeconds(30);
-        WebDriverWait wait=new WebDriverWait(driver, duration);
 
         for (WebElement city : cities) {
             Actions actions = new Actions(driver);
@@ -50,14 +46,10 @@ public class Tests extends BaseDriver {
 
     @Test
     public void Test2() {
-
         driver.get("http://dhtmlgoodies.com/scripts/drag-drop-nodes/drag-drop-nodes.html");
 
         List<WebElement> students = driver.findElements(By.xpath("//li[starts-with(@id,'node')]"));
         List<WebElement> boxes = driver.findElements(By.xpath("//ul[starts-with (@id,'box')]"));
-
-        Duration duration=Duration.ofSeconds(30);
-        WebDriverWait wait=new WebDriverWait(driver, duration);
 
         for (WebElement student : students) {
             for (WebElement box : boxes) {
@@ -77,14 +69,10 @@ public class Tests extends BaseDriver {
 //    buradaki bütün şehirleri bütün ülkere doğru şekilde topluca dağıtınız.
     @Test
     public void Test3() {
-
         driver.get("http://dhtmlgoodies.com/scripts/drag-drop-nodes-quiz/drag-drop-nodes-quiz.html");
 
         List<WebElement> cities = driver.findElements(By.xpath("//li[starts-with(@id,'node')]"));
         List<WebElement> countryBoxes = driver.findElements(By.xpath("//ul[starts-with (@id,'box')]"));
-
-        Duration duration = Duration.ofSeconds(30);
-        WebDriverWait wait = new WebDriverWait(driver, duration);
 
         for (WebElement city : cities) {
             for (WebElement country : countryBoxes) {
