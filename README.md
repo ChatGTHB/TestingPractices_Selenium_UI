@@ -22,17 +22,24 @@ Welcome to the **TestingPractices_Selenium_UI** repository! This project is desi
 - [📜 License](#📜-license)
 
 ## 📥 Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ChatGTHB/TestingPractices_Selenium_UI.git
-   ```
-2. Ensure you have Java and Selenium WebDriver installed on your system.
-3. Install additional libraries as required by the project, such as WebDriver managers and test runners.
+1. Open IntelliJ IDEA.
+2. Select **File > New > Project from Version Control**.
+3. Enter the repository URL: `https://github.com/ChatGTHB/TestingPractices_Selenium_UI.git` and click **Clone**.
+4. Ensure you have JDK installed on your system:
+   - Go to **File > Project Structure > Project** and ensure the Project SDK is set to the correct JDK version.
+5. Add the required dependencies using Maven:
+   - Go to **File > Project Structure > Libraries**.
+   - Click the **+** icon, select **From Maven**.
+   - Add the following Maven artifacts:
+      - `org.seleniumhq.selenium:selenium-java:latest`
+      - `commons-io:commons-io:latest`
+      - `org.slf4j:slf4j-nop:latest`
 
 ## ⚙️ Usage
-1. Open the project in IntelliJ IDEA or any other Java IDE.
-2. Navigate through the test scenarios which include locators, CSS selectors, XPath, iframe handling, robot classes, and more.
-3. Execute the test scripts from various modules to see Selenium in action.
+1. Open the project in IntelliJ IDEA.
+2. Locate the test cases in the appropriate directory provided.
+3. Run the test cases.
+4. Customize the test cases as needed to suit your testing requirements.
 
 ## ✨ Features
 - Coverage of basic to advanced Selenium techniques.
@@ -42,8 +49,9 @@ Welcome to the **TestingPractices_Selenium_UI** repository! This project is desi
 ## 📦 Dependencies
 - Java JDK 11 or newer
 - Selenium WebDriver
-- JUnit
-- WebDriver Manager
+- JUnit (comes with Java, no additional installation needed)
+- Commons IO
+- SLF4J NOP
 
 ## 🔧 Configuration
 Ensure all dependencies are correctly configured in your IDE and build tools. Use Maven or Gradle to handle library dependencies efficiently.
@@ -77,9 +85,15 @@ The project includes a variety of test scenarios to demonstrate the capabilities
 These examples provide a practical approach to mastering Selenium for robust UI testing. Each module within the project is accompanied by detailed comments and documentation to help you understand and apply the techniques effectively.
 
 ## 🛠️ Troubleshooting
-- Verify Java and Selenium WebDriver installations.
-- Update WebDriver binaries to match the browser versions used in tests.
-- Check error logs for detailed diagnostics during test failures.
+If you encounter any issues:
+
+- Ensure that Selenium WebDriver is properly installed and operational. Check that extensions and drivers (such as ChromeDriver or GeckoDriver) are up to date.
+- Make sure your Java environment is correctly set up for Selenium and other dependencies.
+- Ensure that your IntelliJ IDEA and other development tools are configured according to the project's requirements.
+- If you are experiencing issues with dependencies, check your Maven configurations and ensure that the necessary libraries are properly included in your project.
+- If problems persist, open an issue on the GitHub repository. Try to describe your problem in as much detail as possible so that you can receive help more quickly.
+
+If you encounter any issues, please open an issue on the GitHub repository.
 
 ## 👥 Contributors
 - [ChatGTHB](https://github.com/ChatGTHB)
